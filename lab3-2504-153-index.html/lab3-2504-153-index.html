@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验任务3-数字展销平台首页-秋分</title>
+    <link rel="stylesheet" href="css/lab3-2504-153-index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span>秋分数字展销平台</span>
+        </div>
+        <nav class="nav-menu">
+            <a href=" ">首页</a >
+            <a href="#">图书分类</a >
+            <a href="#">新书上市</a >
+            <a href="#">热门推荐</a >
+            <a href="#">关于我们</a >
+        </nav>
+    </header>
+    <div class="main-container">
+        <aside class="sidebar-left">
+            <h3>图书分类</h3>
+            <ul class="category-list">
+                <li><a href="#">计算机科学</a ></li>
+                <li><a href="#">文学经典</a ></li>
+                <li><a href="#">经济管理</a ></li>
+                <li><a href="#">少儿读物</a ></li>
+                <li><a href="#">社科人文</a ></li>
+            </ul>
+        </aside>
+
+        <main class="content-main">
+            <section class="hot-recommend">
+                <h3>热门推荐 <span class="tip"></span></h3>
+                <div class="goods-list">
+                    <div class="goods-item">
+                        <div class="book-img-box">
+                            <img src="https://resource.ityxb.com/static/uploads/book/book_image/2023/05/30/913ab1a041598192b693a062ead1f526.png" alt="前端开发实战">
+                            <span class="tag hot-tag">热销</span>
+                        </div>
+                        <p class="book-name">《前端开发实战》</p >
+                        <p class="price">¥59.00</p >
+                        <div class="goods-detail">
+                            <p>适合前端入门，好学会</p >
+                        </div>
+                    </div>
+                    <div class="goods-item">
+                        <div class="book-img-box">
+                            <img src="https://resource.ityxb.com/static/uploads/book/book_image/2023/01/06/b66c55d701a77d5ba5d19ee6a88aa355.png" alt="C语言程序设计">
+                            <span class="tag new-tag">新书</span>
+                        </div>
+                        <p class="book-name">《C语言程序设计》</p >
+                        <p class="price">¥45.00</p >
+                        <div class="goods-detail">
+                            <p>计算机专业基础教材</p >
+                        </div>
+                    </div>
+                    <div class="goods-item">
+                        <div class="book-img-box">
+                            <img src="https://ts1.tc.mm.bing.net/th/id/OIP-C.aeCjHS0aZI_WJKeOcYTx3wHaKe?rs=1&pid=ImgDetMain&o=7&rm=3" alt="算法导论">
+                            <span class="tag hot-tag">热销</span>
+                        </div>
+                        <p class="book-name">《算法导论》</p >
+                        <p class="price">¥89.00</p >
+                        <div class="goods-detail">
+                            <p>算法经典书籍，进阶学习必备，提升编程思维</p >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="new-book">
+                <h3>新书上市</h3>
+                <table class="book-table">
+                    <thead>
+                        <tr>
+                            <th>图书名称</th>
+                            <th>作者</th>
+                            <th>出版日期</th>
+                            <th>价格</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>《Web前端进阶》</td>
+                            <td>张三</td>
+                            <td>2026-04-15</td>
+                            <td>¥69.00</td>
+                        </tr>
+                        <tr>
+                            <td>《Java编程思想》</td>
+                            <td>张四</td>
+                            <td>2026-03-15</td>
+                            <td>¥79.00</td>
+                        </tr>
+                        <tr>
+                            <td>《Python数据分析》</td>
+                            <td>张五</td>
+                            <td>2026-11-28</td>
+                            <td>¥65.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <aside class="sidebar-right">
+            <h3>限时促销</h3>
+            <div class="promo-content">
+                <div class="promo-item">
+                    <p>全场图书6折起</p >
+                </div>
+                <div class="promo-item">
+                    <p>满100减20</p >
+                </div>
+                <div class="promo-item">
+                    <p>活动时间：2026.04.01-2026.04.30</p >
+                </div>
+            </div>
+        </aside>
+    </div>
+    <button id="openLogin">打开登录弹窗</button>
+     <div class="mask" id="mask"></div>
+     <div class="login-box" id="loginBox">
+         <div class="tab-header">
+             <span class="tab login-tab active">登录</span>
+             <span class="tab register-tab">注册</span>
+         </div>
+         <div class="login-form form-box">
+             <div class="form-item">
+                 <label>账号：</label>
+                 <input type="text" id="loginUser" placeholder="请输入账号">
+             </div>
+             <div class="form-item">
+                 <label>密码：</label>
+                 <input type="password" id="loginPwd" placeholder="请输入密码">
+             </div>
+             <p class="tip" id="loginTip"></p>
+             <button class="form-btn" id="loginSubmit">登录</button>
+         </div>
+         <div class="register-form form-box">
+             <div class="form-item">
+                 <label>账号：</label>
+                 <input type="text" id="regUser" placeholder="请设置账号">
+             </div>
+             <div class="form-item">
+                 <label>密码：</label>
+                 <input type="password" id="regPwd" placeholder="请设置密码">
+             </div>
+             <div class="form-item">
+                 <label>确认密码：</label>
+                 <input type="password" id="regRepwd" placeholder="再次输入密码">
+             </div>
+             <p class="tip" id="regTip"></p >
+             <button class="form-btn" id="regSubmit">注册</button>
+         </div>
+     </div>
+     <script>
+         const openLoginBtn = document.getElementById('openLogin');
+         const loginBox = document.getElementById('loginBox');
+         const mask = document.getElementById('mask');
+         const loginTab = document.querySelector('.login-tab');
+         const registerTab = document.querySelector('.register-tab');
+         const loginForm = document.querySelector('.login-form');
+         const registerForm = document.querySelector('.register-form');
+         const loginUser = document.getElementById('loginUser');
+         const loginPwd = document.getElementById('loginPwd');
+         const loginTip = document.getElementById('loginTip');
+         const loginSubmit = document.getElementById('loginSubmit');
+         const regUser = document.getElementById('regUser');
+         const regPwd = document.getElementById('regPwd');
+         const regRepwd = document.getElementById('regRepwd');
+         const regTip = document.getElementById('regTip');
+         const regSubmit = document.getElementById('regSubmit');
+         openLoginBtn.onclick = function(){
+             loginBox.style.display = 'block';
+             mask.style.display = 'block';
+         }
+         mask.onclick = function(){
+             loginBox.style.display = 'none';
+             mask.style.display = 'none';
+             loginTip.innerText = '';
+             regTip.innerText = '';
+         }
+         loginTab.onclick = function(){
+             loginTab.classList.add('active');
+             registerTab.classList.remove('active');
+             loginForm.style.display = 'block';
+             registerForm.style.display = 'none';
+         }
+         registerTab.onclick = function(){
+             registerTab.classList.add('active');
+             loginTab.classList.remove('active');
+             registerForm.style.display = 'block';
+             loginForm.style.display = 'none';
+         }
+         regSubmit.onclick = function(){
+             let user = regUser.value.trim();
+             let pwd = regPwd.value.trim();
+             let repwd = regRepwd.value.trim();
+             if(user === '' || pwd === ''){
+                 regTip.innerText = '账号和密码不能为空！';
+                 regTip.style.color = 'red';
+                 return;
+             }
+             if(pwd !== repwd){
+                 regTip.innerText = '两次密码输入不一致！';
+                 regTip.style.color = 'red';
+                 return;
+             }
+             let userList = JSON.parse(localStorage.getItem('userInfo')) || [];
+             let isExist = userList.some(item => item.username === user);
+             if(isExist){
+                 regTip.innerText = '该账号已被注册！';
+                 regTip.style.color = 'red';
+                 return;
+             }
+             userList.push({username: user, password: pwd});
+             localStorage.setItem('userInfo', JSON.stringify(userList));
+             regTip.innerText = '注册成功！请前往登录';
+             regTip.style.color = 'green';
+             setTimeout(()=>{
+                 loginTab.click();
+             },800);
+         }
+         loginSubmit.onclick = function(){
+             let user = loginUser.value.trim();
+             let pwd = loginPwd.value.trim();
+             if(user === '' || pwd === ''){
+                 loginTip.innerText = '账号密码不能为空！';
+                 loginTip.style.color = 'red';
+                 return;
+             }
+             let userList = JSON.parse(localStorage.getItem('userInfo')) || [];
+             let userInfo = userList.find(item => item.username === user && item.password === pwd);
+             if(userInfo){
+                 loginTip.innerText = '登录成功！';
+                 loginTip.style.color = 'green';
+                 setTimeout(()=>{
+                     loginBox.style.display = 'none';
+                     mask.style.display='none';
+                 },800);
+             }else{
+                 loginTip.innerText='账号或密码错误！';
+                 loginTip.style.color='red';
+             }
+         }
+     </script>
+</body>
+</html>
